@@ -813,8 +813,8 @@ function Home() {
                 </div>
                 <div className='border-t border-white/10'>
                     <div className='max-w-7xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3'>
+                        <p className='font-mono text-xs tracking-wider text-zinc-500'>Created By <a href="https://aayushpanchal.in/" target="_blank" rel="noopener noreferrer" className='text-zinc-300 hover:text-white transition'>Aayush Panchal</a></p>
                         <p className='font-mono text-xs tracking-wider text-zinc-500'>&copy; {new Date().getFullYear()} GenWeb.ai — All rights reserved.</p>
-                        <p className='font-mono text-xs tracking-wider text-zinc-500 uppercase'>Built for builders</p>
                     </div>
                 </div>
             </footer>

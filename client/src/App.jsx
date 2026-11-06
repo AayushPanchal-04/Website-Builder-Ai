@@ -9,7 +9,10 @@ import WebsiteEditor from './pages/Editor'
 import LiveSite from './pages/LiveSite'
 import Pricing from './pages/Pricing'
 
-export const serverUrl="http://localhost:8000"
+// Local dev talks to the Express server directly; a deployed build uses
+// VITE_SERVER_URL when the API lives on another domain, otherwise same-origin.
+export const serverUrl =
+  import.meta.env.VITE_SERVER_URL ?? (import.meta.env.DEV ? "http://localhost:8000" : "")
 function App() {
   useGetCurrentUser()
   const {userData}=useSelector(state=>state.user)

@@ -14,8 +14,15 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth= getAuth(app)
-const provider=new GoogleAuthProvider()
+let auth = null
+let provider = null
+
+if (firebaseConfig.apiKey) {
+  const app = initializeApp(firebaseConfig)
+  auth = getAuth(app)
+  provider = new GoogleAuthProvider()
+} else {
+  console.warn("Firebase is not configured. Set VITE_FIREBASE_API_KEY in client/.env to enable Google sign-in.")
+}
 
 export {auth,provider}
